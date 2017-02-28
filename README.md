@@ -12,9 +12,9 @@ Web application to calculate movie ticket price based on movie, time of day, and
 
 |Behavior|Input|Output|
 |:---:|:---:|:---:|
-|Get selected movie from user input|"Finding Nemo"|"Finding Nemo"|
-|Get selected time of day from user input|"9:00pm"|"9:00pm"|
-|Get age from user input|"30"|30|
+|Creates ticket and returns the movie title correctly|"Finding Nemo"|"Finding Nemo"|
+|Creates ticket and returns the time correctly|"9:00pm"|"9:00pm"|
+|Creates ticket and returns the age correctly|"30"|30|
 |Determine time of day category based on inputted time|9:00pm|prime-time|
 |Adjust pricing based on movie selection|"Finding Nemo"|$7.00|
 |Adjust pricing based on time of day selection|"3:00pm"|$6.00|
