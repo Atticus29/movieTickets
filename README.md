@@ -6,7 +6,7 @@
 #### By Gloria Friesen and Mark Fisher
 
 ## Description
-A movie ticket pricing website that ...
+Web application to calculate movie ticket price based on movie, time of day, and age.
 
 ### Specifications
 
