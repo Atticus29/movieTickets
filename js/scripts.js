@@ -1,6 +1,6 @@
 // Back End
-function Ticket (price, movie, time, age) {
-  this.price = price;
+function Ticket (movie, time, age) {
+  this.price = 100;
   this.movie = movie;
   this.time = getTimeCategory(time);
   this.age = age;
@@ -9,13 +9,18 @@ function Ticket (price, movie, time, age) {
 var getTimeCategory = function(timeStr){
   var timeRegEx = /(\d+):(\d+)/;
   var parsedHour = parseInt(timeStr.replace(timeRegEx, '$1'));
-  console.log(parsedHour);
   if(parsedHour<16){
     return "Matinee";
   } else if (parsedHour>=23){
     return "Midnight";
   } else{
     return "Prime-time"
+  }
+}
+
+Ticket.prototype.getMovieDiscount = function() {
+  if ((this.movie === 1) || (this.movie === 4)) {
+    this.price -= 1;
   }
 }
 
@@ -26,10 +31,13 @@ var getTimeCategory = function(timeStr){
 $(function(){
   $("form#movieInput").submit(function() {
     event.preventDefault();
-    var movieInput = $("#movieSelector").val();
+    var movieInput = parseInt($("#movieSelector").val());
     var timeInput = $("#timeSelector").val();
     var ageInput = $("#ageSelector").val();
     var timeCategory = getTimeCategory(timeInput);
-    console.log(timeCategory);
+    var gloriaTicket = new Ticket(movieInput, timeInput, ageInput);
+    console.log(gloriaTicket.price);
+    console.log(gloriaTicket.getMovieDiscount());
+    console.log(gloriaTicket.price);
   });
 });
